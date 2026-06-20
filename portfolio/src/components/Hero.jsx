@@ -6,7 +6,7 @@ function Hero() {
           Hello, it's me <span>Pranil</span>
         </h1>
 
-        <h2>B.Tech CSE Student|Frontend Developer</h2>
+        <h2>B.Tech CSE Student | Frontend Developer</h2>
 
         <p>
           Passionate about React, JavaScript and building
