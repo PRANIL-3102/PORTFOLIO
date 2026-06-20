@@ -16,6 +16,11 @@ body {
   padding: 20px 10%;
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar ul {
   display: flex;
   gap: 30px;
@@ -59,8 +64,46 @@ button {
 }
 
 .hero-image img {
-  width: 350px;
+  width: 280px;
+  height: 280px;
+
+  object-fit: cover;
+
+  object-position: center top;
+
   border-radius: 50%;
+
+  border: 3px solid #38bdf8;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 0 25px rgba(56,189,248,0.4);
+  
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-image img:hover {
+  transform: translateY(-10px) scale(1.05);
+
+  box-shadow:
+    0 0 40px rgba(56,189,248,0.8);
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
 }
 
 button {
@@ -83,4 +126,115 @@ button:hover {
 
 .navbar li:hover {
   color: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about {
+  padding: 100px 10%;
+}
+
+.about h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.skills {
+  padding: 100px 10%;
+}
+
+.skills h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  padding: 20px 30px;
+
+  border-radius: 15px;
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 20px rgba(56,189,248,0.3);
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 250px;
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  background: #38bdf8;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.25;
+
+  z-index: -1;
 }

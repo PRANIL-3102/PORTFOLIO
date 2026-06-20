@@ -4,8 +4,12 @@ function Navbar() {
       <h2>Pranil.</h2>
 
       <ul>
-        <li>About</li>
-        <li>Skills</li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
         <li>Projects</li>
         <li>Contact</li>
       </ul>
