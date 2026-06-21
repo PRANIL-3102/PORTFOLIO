@@ -187,11 +187,16 @@ html {
   font-size: 2.5rem;
 
   margin-bottom: 15px;
+
+  display: inline-block;
+
+  transform-origin: center;
+
+  transition: transform 0.8s ease;
 }
 
 .skill-card:hover .skill-icon {
-  transform: rotate(360deg);
-  transition: 0.8s;
+  transform: rotate(90deg);
 }
 
 .skill-card:hover {
@@ -274,4 +279,121 @@ html {
   opacity: 0.25;
 
   z-index: -1;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 30px;
+}
+
+.project-card {
+
+  width: 100%;
+  max-width: 320px;
+
+  min-height: 420px;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.3s ease;
+
+  backdrop-filter: blur(10px);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.project-card:hover {
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 30px rgba(56,189,248,0.3);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.tech-badge {
+
+  background: rgba(56,189,248,0.15);
+
+  color: #38bdf8;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+}
+
+.project-preview {
+
+  height: 200px;
+
+  border-radius: 15px;
+
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #0ea5e9
+  );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-weight: bold;
+}
+
+.project-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.project-buttons button {
+
+  flex: 1;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
 }
