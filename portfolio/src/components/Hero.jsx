@@ -14,8 +14,12 @@ function Hero() {
         </p>
 
         <div className="buttons">
-          <button>View Projects</button>
-          <button>Download Resume</button>
+          <button>
+            <a href="#projects" className="hero-btn">
+  View Projects
+</a>
+          </button>
+          <button> View Resume</button>
         </div>
       </div>
 
