@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="top">
       <div className="hero-text">
         <h1>
           Hello, it's me <span>Pranil</span>
@@ -25,7 +25,7 @@ function Hero() {
           alt="profile"
         />
       </div>
-    </section>
+      </section>
   );
 }
 

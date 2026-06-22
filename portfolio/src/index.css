@@ -284,7 +284,7 @@ html {
 .projects-container {
   display: grid;
   grid-template-columns:
-    repeat(auto-fit, minmax(350px, 1fr));
+    repeat(auto-fit, minmax(320px, 1fr));
 
   gap: 30px;
 }
@@ -292,7 +292,7 @@ html {
 .project-card {
 
   width: 100%;
-  max-width: 320px;
+  max-width: none;
 
   min-height: 420px;
 
@@ -307,6 +307,17 @@ html {
   transition: 0.3s ease;
 
   backdrop-filter: blur(10px);
+
+  min-height: 350px;
+}
+
+.projects{
+  padding: 100px 10%;
+}
+
+.projects h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
 }
 
 .project-card h3 {
@@ -427,6 +438,21 @@ html {
   backdrop-filter: blur(10px);
 
   transition: 0.3s ease;
+
+  text-decoration: none;
+  color:inherit;
+}
+
+.contact-card a {
+  color: #94a3b8;
+  color:inherit;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.contact-card a:hover {
+  color: #38bdf8;
 }
 
 .contact-card:hover {
@@ -455,4 +481,43 @@ html {
 
 .contact-card p {
   color: #94a3b8;
+}
+
+.footer {
+  text-align: center;
+
+  padding: 50px 20px;
+
+  margin-top: 100px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  color: #94a3b8;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #38bdf8;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer-react {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-react svg {
+  color: #61dafb;
 }

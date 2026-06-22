@@ -2,30 +2,61 @@ import {
   FaReact,
   FaHtml5,
   FaCss3Alt,
-  FaGitAlt
+  FaGitAlt,
+  FaJs,
+  FaJava,
 } from "react-icons/fa";
+
+import {
+  SiPython,
+  SiTailwindcss
+} from "react-icons/si";
 
 function Skills() {
 const skills = [
   {
     name: "HTML",
     icon: <FaHtml5 />,
-    desc: "Structure"
+    desc: "Structures web pages with clean and semantic markup."
   },
 
   {
     name: "CSS",
     icon: <FaCss3Alt />,
-    desc: "Styling"
+    desc: "Designs modern, responsive and attractive web experiences."
   },
 
   {
     name: "React",
     icon: <FaReact />,
-    desc: "Frontend"
+    desc: "Builds fast and interactive user interfaces with components."
   },
 
   {
+    name: "JavaScript",
+    icon: <FaJs/>,
+    desc: "Brings websites to life with dynamic interactions."
+  },
+
+  {
+    name: "Python",
+    icon: <SiPython />,
+    desc: "Simple yet powerful language for automation and development."
+  },
+
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss/>,
+    desc: "Designs modern, responsive and attractive web experiences."
+  },
+
+  {
+    name: "Java",
+    icon: <FaJava/>,
+    desc: "Strong foundation for object-oriented programming."
+  },
+
+    {
     name: "Git",
     icon: <FaGitAlt />,
     desc: "Version Control"
