@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
-function Navbar() {
+function Navbar({
+  darkMode,
+  setDarkMode,
+  setThemeTransition
+}) {
 const [scrolled, setScrolled] = useState(false);
 const [menuOpen, setMenuOpen] = useState(false);
-const [darkMode, setDarkMode] = useState(true);
 useEffect(() => {
 
   const handleScroll = () => {
@@ -42,7 +45,23 @@ useEffect(() => {
 
   <button
   className={`theme-toggle ${darkMode ? "dark" : "light"}`}
-  onClick={() => setDarkMode(!darkMode)}
+  onClick={() => {
+
+  setThemeTransition(true);
+
+  setTimeout(() => {
+
+    setDarkMode(!darkMode);
+
+  }, 200);
+
+  setTimeout(() => {
+
+    setThemeTransition(false);
+
+  }, 900);
+
+}}
 >
 
     <span className="toggle-thumb"></span>

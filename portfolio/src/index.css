@@ -5,9 +5,9 @@
 }
 
 body {
-  background: #0b0f19;
-  color: white;
-  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family:cursive;
 }
 
 .navbar {
@@ -73,7 +73,7 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: var(--text);
 
   text-decoration: none;
 
@@ -230,7 +230,7 @@ html {
 .about p {
   max-width: 700px;
   line-height: 1.8;
-  color: #cbd5e1;
+  color: var(--secondary);
 }
 
 .skills {
@@ -255,7 +255,7 @@ html {
 
   border-radius: 20px;
 
-  background: rgba(255,255,255,0.05);
+  background: var(--card-bg);
 
   border: 1px solid rgba(255,255,255,0.08);
 
@@ -301,7 +301,7 @@ html {
 
 .skill-card p {
 
-  color: #94a3b8;
+  color: var(--secondary);
 
   font-size: 0.9rem;
 }
@@ -419,7 +419,7 @@ html {
 
   border-radius: 20px;
 
-  background: rgba(255,255,255,0.05);
+  background: var(--card-bg);
 
   border: 1px solid rgba(255,255,255,0.1);
 
@@ -445,7 +445,7 @@ html {
 }
 
 .project-card p {
-  color: #94a3b8;
+  color: var(--secondary);
   line-height: 1.6;
   margin-top: 15px;
 }
@@ -550,7 +550,7 @@ html {
 
   border-radius: 20px;
 
-  background: rgba(255,255,255,0.05);
+  background: var(--card-bg);
 
   border: 1px solid rgba(255,255,255,0.1);
 
@@ -599,7 +599,7 @@ html {
 }
 
 .contact-card p {
-  color: #94a3b8;
+  color: var(--secondary);
 }
 
 .footer {
@@ -707,4 +707,94 @@ html {
   height: 16px;
 
   z-index: 2;
+}
+
+.theme-orb {
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  animation: orbExpand 1.2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.light-orb {
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.7),
+      rgba(248,250,252,0.2)
+    );
+}
+
+.dark-orb {
+  background: rgba(11,15,25,0.9);
+}
+
+@keyframes orbExpand {
+
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(80);
+    opacity: 0;
+  }
+
+}
+
+.dark-theme {
+
+  background: #0b0f19;
+  color: white;
+
+  min-height: 100vh;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+.light-theme {
+
+  background: #f8fafc;
+  color: #0f172a;
+
+  min-height: 100vh;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+.dark-theme {
+  --bg: #0b0f19;
+  --text: #ffffff;
+  --card-bg: rgba(255,255,255,0.05);
+  --secondary: #94a3b8;
+}
+.light-theme {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --secondary: #475569;
+  --card-bg: rgba(255,255,255,0.7);
 }
