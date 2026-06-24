@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 function Navbar() {
 const [scrolled, setScrolled] = useState(false);
 const [menuOpen, setMenuOpen] = useState(false);
+const [darkMode, setDarkMode] = useState(true);
 useEffect(() => {
 
   const handleScroll = () => {
@@ -37,6 +38,39 @@ useEffect(() => {
         <li>
           <a href="#contact">Contact</a>
         </li>
+        <li>
+
+  <button
+  className={`theme-toggle ${darkMode ? "dark" : "light"}`}
+  onClick={() => setDarkMode(!darkMode)}
+>
+
+    <span className="toggle-thumb"></span>
+
+    <svg
+      className="sun-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <circle cx="12" cy="12" r="4"/>
+    </svg>
+
+    <svg
+      className="moon-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path d="M21 12.79A9 9 0 1 1 11.21 3
+      7 7 0 0 0 21 12.79z"/>
+    </svg>
+
+  </button>
+
+</li>
       </ul>
     </nav>
   );

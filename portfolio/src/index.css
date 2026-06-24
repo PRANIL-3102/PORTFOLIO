@@ -640,3 +640,71 @@ html {
 .footer-react svg {
   color: #61dafb;
 }
+
+.theme-toggle {
+
+  position: relative;
+
+  width: 72px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 10px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+}
+
+.toggle-thumb {
+
+  position: absolute;
+
+  left: 4px;
+
+  width: 28px;
+
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 15px rgba(56,189,248,0.6);
+
+  transition: all 0.4s ease;
+}
+.theme-toggle.light .toggle-thumb {
+  left: 4px;
+}
+
+.theme-toggle.dark .toggle-thumb {
+  left: 40px;
+}
+
+.sun-icon,
+.moon-icon {
+
+  width: 16px;
+
+  height: 16px;
+
+  z-index: 2;
+}
