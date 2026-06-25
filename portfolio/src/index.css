@@ -7,7 +7,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family:cursive;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .navbar {
@@ -136,6 +136,36 @@ body {
 .hero-text p {
   margin: 20px 0;
   line-height: 1.7;
+}
+
+.hero-btn {
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px 28px;
+
+  background: #38bdf8;
+
+  color: white;
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
+  border-radius: 12px;
+
+  transition: all .35s ease;
+}
+
+.hero-btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 25px rgba(56,189,248,.45);
 }
 
 .buttons {
@@ -797,4 +827,72 @@ html {
   --text: #0f172a;
   --secondary: #475569;
   --card-bg: rgba(255,255,255,0.7);
+}
+
+.intro {
+
+  position: fixed;
+  inset: 0;
+
+  background: var(--bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.intro.hide {
+
+  opacity: 0;
+
+  transform: scale(1.08);
+}
+
+.intro-logo {
+
+  font-size: 5rem;
+
+  font-weight: 800;
+
+  letter-spacing: -.05em;
+
+  color: var(--text);
+
+  animation: introFade 1.2s ease;
+}
+
+.intro-logo span {
+
+  color: #38bdf8;
+
+  text-shadow:
+    0 0 20px #38bdf8;
+}
+
+@keyframes introFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(.9);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
 }
