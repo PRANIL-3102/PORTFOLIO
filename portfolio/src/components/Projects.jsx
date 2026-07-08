@@ -21,7 +21,7 @@ return (
     <section id="projects" className="projects">
         <h2>Projects</h2>
         <div className="projects-container">
-            {projects.map((project, index) => (
+           {projects.map((project, index) => (
             <div className="project-card" key={index}>
             <div classname="project-preview">
             Project Preview
