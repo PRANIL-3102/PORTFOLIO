@@ -18,6 +18,8 @@ import {
   SiC,
 } from "react-icons/si";
 
+import Reveal from "./Reveal";
+
 function Skills() {
   const skillGroups = [
     {
@@ -66,59 +68,74 @@ function Skills() {
 
   return (
     <section className="skills" id="skills">
-      <div className="skills-header">
-        <span className="section-number">02 / SKILLS</span>
+      
+      {/* SECTION HEADER */}
+      <Reveal>
+        <div className="skills-header">
+          <span className="section-number">02 / SKILLS</span>
 
-        <h2>
-          Technologies I
-          <span> work with.</span>
-        </h2>
+          <h2>
+            Technologies I
+            <span> work with.</span>
+          </h2>
 
-        <p>
-          A growing toolkit of technologies I use to build modern,
-          responsive, and interactive web experiences.
-        </p>
-      </div>
+          <p>
+            A growing toolkit of technologies I use to build modern,
+            responsive, and interactive web experiences.
+          </p>
+        </div>
+      </Reveal>
 
+      {/* SKILL CARDS */}
       <div className="skills-grid">
         {skillGroups.map((group, index) => (
-          <div className="skill-group-card" key={index}>
-            <div className="skill-group-top">
-              <span className="skill-group-number">
-                0{index + 1}
-              </span>
+          <Reveal
+            key={index}
+            delay={index * 0.12}
+            direction={index % 2 === 0 ? "left" : "right"}
+          >
+            <div className="skill-group-card">
+              <div className="skill-group-top">
+                <span className="skill-group-number">
+                  0{index + 1}
+                </span>
 
-              <h3>{group.title}</h3>
+                <h3>{group.title}</h3>
+              </div>
+
+              <p className="skill-group-description">
+                {group.description}
+              </p>
+
+              <div className="tech-list">
+                {group.skills.map((skill, skillIndex) => (
+                  <div
+                    className="tech-item"
+                    key={skillIndex}
+                  >
+                    <span className="tech-icon">
+                      {skill.icon}
+                    </span>
+
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <p className="skill-group-description">
-              {group.description}
-            </p>
-
-            <div className="tech-list">
-              {group.skills.map((skill, skillIndex) => (
-                <div
-                  className="tech-item"
-                  key={skillIndex}
-                >
-                  <span className="tech-icon">
-                    {skill.icon}
-                  </span>
-
-                  <span>{skill.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 
-      <div className="skills-footer">
-        <p>
-          <span></span>
-          Always learning, building, and exploring new technologies.
-        </p>
-      </div>
+      {/* FOOTER */}
+      <Reveal delay={0.2}>
+        <div className="skills-footer">
+          <p>
+            <span></span>
+            Always learning, building, and exploring new technologies.
+          </p>
+        </div>
+      </Reveal>
+
     </section>
   );
 }

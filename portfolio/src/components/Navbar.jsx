@@ -1,95 +1,119 @@
 import { useEffect, useState } from "react";
+import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 
 function Navbar({
   darkMode,
   setDarkMode,
-  setThemeTransition
 }) {
-const [scrolled, setScrolled] = useState(false);
-const [menuOpen, setMenuOpen] = useState(false);
-useEffect(() => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 50);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = ["about", "skills", "projects", "contact"];
+
+      const scrollPosition =
+        window.scrollY + window.innerHeight * 0.35;
+
+      let currentSection = "about";
+
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+
+        if (
+          section &&
+          section.offsetTop <= scrollPosition
+        ) {
+          currentSection = sectionId;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    setMenuOpen(false);
   };
 
-  window.addEventListener("scroll", handleScroll);
+  const handleThemeToggle = () => {
+    setDarkMode((previousMode) => !previousMode);
+  };
 
-  return () =>
-    window.removeEventListener("scroll", handleScroll);
+  const navItems = [
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
+  ];
 
-}, []);
   return (
-<nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <h2 className="logo">Pranil.</h2>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <h2 className="logo">Pranil.</h2>
+
       <button
-  className="menu-btn"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? "✕" : "☰"}
-</button>
-      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        className="menu-btn"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        {menuOpen ? <FiX /> : <FiMenu />}
+      </button>
+
+      <ul
+        className={
+          menuOpen
+            ? "nav-links active"
+            : "nav-links"
+        }
+      >
+        {navItems.map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className={
+                activeSection === item.id
+                  ? "active"
+                  : ""
+              }
+              onClick={() => handleNavClick(item.id)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+
         <li>
-          <a href="#about">About</a>
+          <button
+            className={`theme-toggle ${
+              darkMode ? "dark" : "light"
+            }`}
+            onClick={handleThemeToggle}
+            aria-label="Toggle dark mode"
+          >
+            <span className="theme-track">
+              <FiSun className="sun-icon" />
+              <FiMoon className="moon-icon" />
+
+              <span className="toggle-thumb">
+                {darkMode ? <FiMoon /> : <FiSun />}
+              </span>
+            </span>
+          </button>
         </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-        <li>
-
-  <button
-  className={`theme-toggle ${darkMode ? "dark" : "light"}`}
-  onClick={() => {
-
-  setThemeTransition(true);
-
-  setTimeout(() => {
-
-    setDarkMode(!darkMode);
-
-  }, 200);
-
-  setTimeout(() => {
-
-    setThemeTransition(false);
-
-  }, 900);
-
-}}
->
-
-    <span className="toggle-thumb"></span>
-
-    <svg
-      className="sun-icon"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <circle cx="12" cy="12" r="4"/>
-    </svg>
-
-    <svg
-      className="moon-icon"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M21 12.79A9 9 0 1 1 11.21 3
-      7 7 0 0 0 21 12.79z"/>
-    </svg>
-
-  </button>
-
-</li>
       </ul>
     </nav>
   );
