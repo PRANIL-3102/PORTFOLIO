@@ -7,7 +7,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family:cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
