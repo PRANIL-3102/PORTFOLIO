@@ -95,7 +95,7 @@ function Hero() {
             <div className="image-ring ring-two"></div>
 
             <div className="hero-image">
-              <img src="/prof.jpg" alt="Pranil Singha Mahapatra" />
+              <img src="/prof.png" alt="Pranil Singha Mahapatra" />
             </div>
 
             <div className="hero-card hero-card-top">
