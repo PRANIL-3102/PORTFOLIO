@@ -2,20 +2,10 @@ function Projects() {
 
 const projects = [
   {
-    title: "Proposal Website",
-    description: "Interactive proposal website with animations.",
+    title: "working on that ",
+    description: "Learning React and building projects to enhance my skills.",
     tech:["REACT", "CSS", "JAVASCRIPT"]
 },
-  {
-    title: "Medicine Inventory System",
-    description: "Inventory management app using React and Supabase.",
-    tech:["REACT", "CSS", "JAVASCRIPT", "SUPABASE"]
-},
-  {
-    title: "TECHNOVA",
-    description: "Modern ecommerce tech store.",
-    tech:["REACT", "CSS", "JAVASCRIPT"]
-  },
 ];
 return (
     <section id="projects" className="projects">
