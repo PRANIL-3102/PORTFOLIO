@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const greetings = [
+  { text: "Hello", language: "English" },
   { text: "नमस्ते", language: "Hindi" },
   { text: "নমস্কার", language: "Bengali" },
   { text: "வணக்கம்", language: "Tamil" },
@@ -35,8 +36,8 @@ function Intro({ onFinish }) {
 
         // Fade in
         setVisible(true);
-      }, 180);
-    }, 600);
+      }, 120);
+    }, 500);
 
     // Start intro exit
     const hideTimer = setTimeout(() => {
@@ -47,7 +48,7 @@ function Intro({ onFinish }) {
     // Remove intro after fade animation
     const finishTimer = setTimeout(() => {
       onFinish();
-    }, 4800);
+    }, 5000);
 
     return () => {
       isActive = false;
