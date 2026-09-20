@@ -37,7 +37,6 @@ function Hero() {
             Open to opportunities
           </div>
 
-          
           <p className="hero-greeting">Hello, I'm</p>
 
           <h1>
@@ -57,10 +56,20 @@ function Hero() {
             building modern, responsive, and interactive web experiences.
           </p>
 
+          {/* HERO ACTIONS */}
           <div className="hero-actions">
             <a href="#projects" className="primary-btn">
               View My Work
               <FaArrowRight />
+            </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="secondary-btn"
+            >
+              View Resume
             </a>
 
             <a href="#contact" className="secondary-btn">
@@ -68,6 +77,7 @@ function Hero() {
             </a>
           </div>
 
+          {/* SOCIAL LINKS */}
           <div className="hero-socials">
             <a
               href="https://github.com/PRANIL-3102"
@@ -96,11 +106,15 @@ function Hero() {
             <div className="image-ring ring-two"></div>
 
             <div className="hero-image">
-              <img src="/prof.png" alt="Pranil Singha Mahapatra" />
+              <img
+                src="/prof.png"
+                alt="Pranil Singha Mahapatra"
+              />
             </div>
 
             <div className="hero-card hero-card-top">
               <span>⚛</span>
+
               <div>
                 <strong>React</strong>
                 <small>Frontend Development</small>
@@ -109,6 +123,7 @@ function Hero() {
 
             <div className="hero-card hero-card-bottom">
               <span>💻</span>
+
               <div>
                 <strong>Building</strong>
                 <small>Modern Web Experiences</small>

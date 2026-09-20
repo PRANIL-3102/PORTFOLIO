@@ -13,7 +13,12 @@ function Navbar({
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ["about", "skills", "projects", "contact"];
+      const sections = [
+        "about",
+        "skills",
+        "projects",
+        "contact",
+      ];
 
       const scrollPosition =
         window.scrollY + window.innerHeight * 0.35;
@@ -65,6 +70,7 @@ function Navbar({
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <h2 className="logo">Pranil.</h2>
 
+      {/* MOBILE MENU BUTTON */}
       <button
         className="menu-btn"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -80,6 +86,7 @@ function Navbar({
             : "nav-links"
         }
       >
+        {/* NAVIGATION LINKS */}
         {navItems.map((item) => (
           <li key={item.id}>
             <a
@@ -96,6 +103,19 @@ function Navbar({
           </li>
         ))}
 
+        {/* RESUME */}
+        <li>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+          >
+            Resume
+          </a>
+        </li>
+
+        {/* THEME TOGGLE */}
         <li>
           <button
             className={`theme-toggle ${
