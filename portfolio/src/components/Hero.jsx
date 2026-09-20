@@ -37,6 +37,7 @@ function Hero() {
             Open to opportunities
           </div>
 
+          
           <p className="hero-greeting">Hello, I'm</p>
 
           <h1>
